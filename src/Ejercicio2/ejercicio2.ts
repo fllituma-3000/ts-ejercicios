@@ -1,32 +1,20 @@
-class Persona {
-    nombre: string;
-    edad: number;
+class Estudiante {
 
-    constructor(nombre: string, edad: number){
-        this.nombre = nombre;
-        this.edad = edad;
-    }
+  // Actualizar promedio con nueva nota
+  agregarNota(promedio: number, nuevaNota: number): number {
+    // Sumar ambas notas y dividir para obtener el nuevo promedio
+    return (promedio + nuevaNota) / 2;
+  }
 
-    saludar(){
-        console.log("Hola soy " + this.nombre);
-    }
+  // Verificar si aprueba
+  aprobar(nota: number, minima: number): boolean {
+    // Retorna true si la nota es mayor o igual
+    return nota >= minima;
+  }
+
+  // Calcular total de faltas
+  calcularFaltas(faltasActuales: number, nuevas: number): number {
+    // Sumar las nuevas faltas a las actuales
+    return faltasActuales + nuevas;
+  }
 }
-
-class Estudiante extends Persona {
-    curso: string;
-
-    constructor(nombre: string, edad: number, curso: string){
-        super(nombre, edad);  
-        this.curso = curso;   
-    }
-
-    imprimirCurso(){
-        console.log("Estoy en el curso: " + this.curso);
-    }
-}
-
-// Ejemplo usando la clase Estudiante
-let estudiante1 = new Estudiante("Franklin", 20, "Programación");
-
-estudiante1.saludar();        
-estudiante1.imprimirCurso();  

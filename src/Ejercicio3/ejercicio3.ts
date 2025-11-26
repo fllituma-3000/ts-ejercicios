@@ -1,26 +1,22 @@
-class CuentaBancaria {
-    private saldo: number;
+class Auto {
 
-    constructor(saldoInicial: number) {
-        this.saldo = saldoInicial;
-    }
+  // Acelerar auto
+  acelerar(velocidadActual: number, incremento: number): number {
+    // Sumar km/h a la velocidad
+    return velocidadActual + incremento;
+  }
 
-    depositar(monto: number): void {
-        if (monto > 0) {
-            this.saldo += monto;
-            console.log(`Depósito realizado: $${monto}`);
-        } else {
-            console.log("Error: El monto debe ser positivo");
-        }
-    }
+  // Frenar auto
+  frenar(velocidadActual: number, decremento: number): number {
+    // Restar velocidad
+    const nuevaVelocidad = velocidadActual - decremento;
+    // Si queda negativa, se devuelve 0
+    return nuevaVelocidad < 0 ? 0 : nuevaVelocidad;
+  }
 
-    mostrarSaldo(): void {
-        console.log(`Saldo actual: $${this.saldo}`);
-    }
+  // Calcular velocidad media
+  recorrer(distancia: number, tiempo: number): number {
+    // Fórmula: distancia / tiempo
+    return distancia / tiempo;
+  }
 }
-
-
-const cuenta = new CuentaBancaria(100);
-cuenta.mostrarSaldo();
-cuenta.depositar(50);
-cuenta.mostrarSaldo();

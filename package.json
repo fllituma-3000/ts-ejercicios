@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "Ejercicio1": "ts-node src/Ejercicio1/ejercicio1.ts",
+    "Ejercicio2": "ts-node src/Ejercicio2/ejercicio2.ts",
     "Ejercicio3": "ts-node src/Ejercicio3/ejercicio3.ts",
-    "Ejercicio4": "ts-node src/Ejercicio4/ejercicio4.ts"
+    "Ejercicio4": "ts-node src/Ejercicio4/ejercicio4.ts",
+    "Ejercicio5": "ts-node src/Ejercicio5/ejercicio5.ts"
   },
   "keywords": [],
   "author": "",

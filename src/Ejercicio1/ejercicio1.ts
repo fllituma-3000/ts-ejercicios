@@ -1,24 +1,28 @@
-class Persona {
-    nombre: string = ""
-    edad: number = 0
+class Banco {
 
-    constructor(nombre:string , edad:number){
-        this.nombre = nombre
-        this.edad = edad
-    }
-    saludar(){
-     console.log("Hola soy "+ this.nombre)
-    }
+  // Depositar dinero
+  depositar(saldo: number, monto: number): number {
+    // Sumar el depósito al saldo actual
+    return saldo + monto;
+  }
 
+  // Retirar dinero
+  retirar(saldo: number, monto: number): number {
+    // Validar que haya suficiente dinero
+    if (monto > saldo) {
+      throw new Error("Fondos insuficientes");
+    }
+    // Restar el retiro
+    return saldo - monto;
+  }
+
+  // Transferencia entre cuentas
+  transferir(saldoOrigen: number, monto: number): number {
+    // Validar fondos
+    if (monto > saldoOrigen) {
+      throw new Error("No se puede transferir más del saldo disponible");
+    }
+    // Restar la transferencia del saldo de origen
+    return saldoOrigen - monto;
+  }
 }
-
-let Lista : Persona[] = [
-    new Persona('Luis', 25),
-    new Persona('Carlos', 23),
-    new Persona('Alexander', 24),
-];    
-
-console.log(Lista)
-Lista[0]!.saludar();  
-Lista[1]!.saludar();  
-Lista[2]!.saludar();  
